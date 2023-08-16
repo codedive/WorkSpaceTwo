@@ -10,6 +10,7 @@ body  {
     padding-top: 3rem;
     margin: 0;
     flex-wrap: wrap;
+    background-color: #7bdaf3;
 }
 
 .app {
@@ -58,7 +59,11 @@ body  {
     font-family: inherit;
 }
 
-.hidden {
+.hide {
     display: none;
+}
+
+.main {
+    padding: 20px;
 }
 

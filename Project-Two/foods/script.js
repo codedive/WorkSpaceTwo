@@ -1,18 +1,21 @@
-const icons = document.querySelectorAll('.section-one-icons i')
+document.querySelector('.menu').addEventListener('click', () => {
+	document.querySelectorAll('.target').forEach((item) => {
+		item.classList.toggle('change');
+	})
+})
 
-let x = 1
+const icons = document.querySelectorAll('.section-1-icons i')
+let i = 1
 
 setInterval(() => {
-    x++
+	i++
+	const icon = document.querySelector('.section-1-icons .change')
+	icon.classList.remove('change')
 
-    const icon = document.querySelector('.section-one-icons .change')
-    
-    icon.classList.remove('change')
-    if (x > icons.length) {
-        icons[0].classList.add('change')
-        x = 1
-    } else {
-        icon.nextElementSibling.classList.add('change')
-    }
-     
-},4000)
+	if (i > icons.length) {
+		icons[0].classList.add('change')
+		i = 1
+	} else {
+		icon.nextElementSibling.classList.add('change')
+	}
+}, 4000)
