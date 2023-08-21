@@ -1,43 +1,63 @@
-const addbtn = document.getElementById('app')
+const addBtn = document.getElementById('add')
 
-addbtn.addEventListener('click', () => addNote('hello'))
+const notes = JSON.parse(localStorage.getItem('notes'))
 
-function addNote(text = '') {
+if(notes) {
+    notes.forEach(note => addNewNote(note))
+}
+
+addBtn.addEventListener('click', () => addNewNote())
+
+function addNewNote(text = '') {
     const note = document.createElement('div')
     note.classList.add('note')
 
     note.innerHTML = `
-    
     <div class="tools">
         <button class="edit"><i class="fas fa-edit"></i></button>
         <button class="delete"><i class="fas fa-trash-alt"></i></button>
-        </div>
+    </div>
 
-        <div class="main ${text ? "" : "hide"} "></div>
-        <textarea class="${text ? "hide" : ""}></textarea>
-    
+    <div class="main ${text ? "" : "hidden"}"></div>
+    <textarea class="${text ? "hidden" : ""}"></textarea>
     `
 
-    const edtbtn = note.querySelector('.edit')
-    const delbtn = note.querySelector('.delete')
+    const editBtn = note.querySelector('.edit')
+    const deleteBtn = note.querySelector('.delete')
     const main = note.querySelector('.main')
-    const testarea = note.querySelector('textarea')
+    const textArea = note.querySelector('textarea')
 
-    testarea.value = text
+    textArea.value = text
     main.innerHTML = marked(text)
 
-    delbtn.addEventListener('click', () => {
-      note.remove()
+    deleteBtn.addEventListener('click', () => {
+        note.remove()
+
+        updateLS()
     })
 
-    edtbtn.addEventListener('click', () => {
-        main.classList.toggle('hide')
-        testarea.classList.toggle('hide')
+    editBtn.addEventListener('click', () => {
+        main.classList.toggle('hidden')
+        textArea.classList.toggle('hidden')
     })
 
-    /*testarea.addEventListener('input', (e) => {
+    textArea.addEventListener('input', (e) => {
         const { value } = e.target
+
         main.innerHTML = marked(value)
-    })*/
+
+        updateLS()
+    })
+
     document.body.appendChild(note)
+}
+
+function updateLS() {
+    const notesText = document.querySelectorAll('textarea')
+
+    const notes = []
+
+    notesText.forEach(note => notes.push(note.value))
+
+    localStorage.setItem('notes', JSON.stringify(notes))
 }
