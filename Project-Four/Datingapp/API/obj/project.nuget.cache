@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "YT5lR83GN1kylK8O3mheqP2e/XLrISZ2lB/ShiYMuGRUVcbyUSBJy1fsLBDXHTvdzaCanuvfUEUidhYfGXv6ug==",
+  "dgSpecHash": "wmP7ZHGXUHByzWq3p2uSAmVWiluwgneAO0aS9heATW3qUZkxCeaCPe2tQETJzjIX/Nk/baWHNZQR/WJl145uEg==",
   "success": true,
   "projectFilePath": "C:\\Users\\nitin\\source\\repos\\GIT\\WorkSpaceTwo\\Project-Four\\DatingApp\\API\\API.csproj",
   "expectedPackageFiles": [
@@ -105,5 +105,26 @@
     "C:\\Users\\nitin\\.nuget\\packages\\system.threading\\4.3.0\\system.threading.4.3.0.nupkg.sha512",
     "C:\\Users\\nitin\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'System.IdentityModel.Tokens.Jwt' 6.32.1 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-59j7-ghrg-fj52",
+      "libraryId": "System.IdentityModel.Tokens.Jwt",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'System.IdentityModel.Tokens.Jwt' 6.32.1 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-8g9c-28fc-mcx2",
+      "libraryId": "System.IdentityModel.Tokens.Jwt",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }
