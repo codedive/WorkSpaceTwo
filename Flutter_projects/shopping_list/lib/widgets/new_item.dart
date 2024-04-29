@@ -79,6 +79,7 @@ class _NewItemState extends State<NewItem> {
                 decoration: const InputDecoration(
                   label: Text('Name'),
                 ),
+                keyboardType: TextInputType.name,
                 validator: (value) {
                   if (value == null ||
                       value.isEmpty ||
